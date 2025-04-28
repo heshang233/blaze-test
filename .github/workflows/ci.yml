@@ -19,6 +19,15 @@ jobs:
           java-version: 17
           distribution: temurin
       
-      - name: Build Module
+      - name: package
         run: |
-          mvn clean package -Pnative -Dquarkus.native.container-build=true -DskipTests 
+          mvn clean package
+
+      - name: jdeps
+        run: |
+          jdeps -cp ~/.m2/repository/com/blazebit/blaze-persistence-integration-hibernate-6.2/1.6.15/blaze-persistence-integration-hibernate-6.2-1.6.15.jar \
+          --verbose:class | grep OracleUserDefinedTypeExporter
+      
+      # - name: Build Module
+      #   run: |
+      #     mvn package -Pnative -Dquarkus.native.container-build=true -DskipTests 
