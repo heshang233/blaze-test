@@ -155,6 +155,10 @@
             </properties>
             <dependencies>
                 <dependency>
+                    <groupId>org.hibernate.orm</groupId>
+                    <artifactId>hibernate-core</artifactId>
+                </dependency>
+                <dependency>
                     <groupId>com.blazebit</groupId>
                     <artifactId>blaze-persistence-entity-view-processor-jakarta</artifactId>
                     <scope>provided</scope>
