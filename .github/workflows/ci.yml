@@ -21,4 +21,4 @@ jobs:
       
       - name: Build Module
         run: |
-          mvn clean package -Dnative -Dquarkus.native.container-build=true -DskipTests
+          mvn clean package -Pnative -Dquarkus.native.container-build=true -DskipTests -Dquarkus.native.args="-H:+ReportUnsupportedElementsAtRuntime -H:+PrintAnalysisCallTree"
