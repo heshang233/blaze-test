@@ -25,4 +25,7 @@ jobs:
       
       - name: Build Module
         run: |
-          mvn package -Pnative -Dquarkus.native.container-build=true -DskipTests -Dquarkus.native.args="-H:+ReportUnsupportedElementsAtRuntime -H:+PrintAnalysisCallTree"
+          mvn package -Pnative -Dquarkus.native.container-build=true -DskipTests \
+          -Dquarkus.native.additional-build-args=\
+          --print-class-initialization,\
+          --trace-class-initialization=org.hibernate.dialect.OracleUserDefinedTypeExporter
