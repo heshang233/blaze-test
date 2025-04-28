@@ -18,12 +18,7 @@ jobs:
         with:
           java-version: 17
           distribution: temurin
-
-      - name: Compile
-        run: |
-          mvn clean compile -DskipTests
-      
+          
       - name: Build Module
         run: |
-          mvn package -Pnative -Dquarkus.native.container-build=true -DskipTests \
-          -Dquarkus.native.additional-build-args=--initialize-at-build-time=org.hibernate.dialect.OracleUserDefinedTypeExporter
+          mvn clean package -Pnative -Dquarkus.native.container-build=true -DskipTests
