@@ -21,5 +21,4 @@ jobs:
       
       - name: Build Module
         run: |
-          mvn clean package -Pnative -Dquarkus.native.container-build=true -DskipTests \
-          -Dquarkus.native.additional-build-args=--initialize-at-build-time=org.hibernate.dialect.PostgreSQLDialect
+          mvn clean package -Pnative -Dquarkus.native.container-build=true -DskipTests 
