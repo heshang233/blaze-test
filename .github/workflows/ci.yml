@@ -26,4 +26,4 @@ jobs:
       - name: Build Module
         run: |
           mvn package -Pnative -Dquarkus.native.container-build=true -DskipTests \
-          -Dquarkus.native.additional-build-args=--trace-class-initialization=org.hibernate.dialect.OracleUserDefinedTypeExporter
+          -Dquarkus.native.additional-build-args=--initialize-at-build-time=org.hibernate.dialect.OracleUserDefinedTypeExporter
